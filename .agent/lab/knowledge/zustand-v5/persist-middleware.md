@@ -36,6 +36,3 @@ export const useAuthStore = create<AuthStore>()(
 ## Gotchas
 - If you change the store's structure, users might have "old" data in their browser. Use the `version` property and the `migrate` function in the middleware if needed.
 - Hydration is async by default. Use `onRehydrateStorage` to know when it finishes.
-
-## In our Stack
-Works alongside our **Axios Interceptors** to maintain a persistent user session across reloads.

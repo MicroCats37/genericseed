@@ -27,6 +27,3 @@ const UsernameSchema = z.string().refine(async (val) => {
 
 ## Gotchas
 - Async refinements only run when using `.parseAsync()` or `.safeParseAsync()`. Standard `.parse()` will throw an error with async rules.
-
-## In our Stack
-Used in **Next.js Forms** to provide human-readable validation messages for complex business logic.

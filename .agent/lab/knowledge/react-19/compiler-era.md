@@ -23,6 +23,3 @@ const callback = () => doSomething(a);
 ## Gotchas
 - The compiler assumes components are "pure". They must not mutate objects outside their scope during render.
 - For legacy transitions, use the `"use no memo"` directive if a specific component fails with auto-optimization.
-
-## In our Stack
-Drastically reduces the complexity of our **Clean Code Shields**, allowing the AI to generate powerful components without the noise of manual memoization.

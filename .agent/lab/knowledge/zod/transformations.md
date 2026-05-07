@@ -20,6 +20,3 @@ const PriceSchema = z.string()
 
 ## Gotchas
 - Transformations only run upon successful validation of the previous step.
-
-## In our Stack
-Ensures that data coming from **Axios** or **User Forms** is cleaned and typed before reaching our **Zustand** stores.

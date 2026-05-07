@@ -45,5 +45,4 @@ function MyForm({ updateAction }) {
 - `useFormStatus` **ONLY** works if the component is **inside** a `<form>`. It will not work in the same component that defines the `<form>`.
 - `useActionState` requires a `prevState` as the first argument of the action function.
 
-## In our Stack
-Founds our **Lego Form Components**. Enables native integration with Next.js **Server Actions**.
+

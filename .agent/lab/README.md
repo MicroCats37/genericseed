@@ -1,19 +1,30 @@
 # The .lab: Enterprise AI Knowledge & Specs
-**Version: 1.0.0**
 
-This directory is the "Source of Truth" for our technical architecture. It is designed to be token-efficient, framework-agnostic in its facts, and framework-specific in its decisions.
+This directory is the **Universal Shell (Cascaron)** and **Source of Truth** for our technical architecture. It travels with all our projects to provide an AI-optimized, modular knowledge system.
 
-## 🏛 Layered Architecture
+> 📖 **New here?** Start by reading the full [DOCS.md](./DOCS.md) to understand the architecture and how AI agents navigate this folder.
 
-1.  **knowledge/**: Technical facts and canonical patterns for core libraries. (E.g. Axios, Zod, React 19).
-2.  **specs/**: Architectural contracts defining *how* we use technologies in specific frameworks (E.g. Next.js).
-3.  **skills/**: AI-executable blueprints that connect knowledge + specs to specific project actions.
+## 🏛 The 4-Layer Architecture
 
-## 🚦 Navigation
-- [Knowledge Index](file:///c:/Users/Usuario/Desktop/generic/.lab/knowledge/INDEX.md)
-- [Next.js Specs Index](file:///c:/Users/Usuario/Desktop/generic/.lab/specs/nextjs/INDEX.md)
+Our documentation is strictly separated by semantic purpose to save AI tokens and prevent hallucinations:
 
-## ✍ Governance Rules
-- **English Only**: All documents are written in English for maximum token efficiency.
-- **Forbidden/Required**: Specs MUST explicitly show forbidden old patterns (React 18) vs required new ones (React 19).
-- **Self-Contained**: Specs should be readable as cheat sheets, with links to knowledge for deep dives only.
+1. **`knowledge/`** (WHAT it is): Pure technical facts about libraries. No decisions, no opinions.
+2. **`patterns/`** (HOW we use it): Recipes and standard ways to use technologies in our stack.
+3. **`specs/`** (WHAT WE DECIDED): Architectural contracts, rules (`REQUIRED`/`FORBIDDEN`), and interfaces (`IO.md`).
+4. **`projects/`** (OVERRIDES): Project-specific rules when a new app is born from this shell.
+
+## 🚦 Quick Navigation
+
+- [📖 Full Architecture Documentation](./DOCS.md)
+- [⚖️ Contribution & Governance Rules](./CONTRIBUTING.md)
+- [📚 Knowledge Master Index](./knowledge/INDEX.md)
+- [🧩 Patterns Master Index](./patterns/INDEX.md)
+- [🏗️ Specs Master Index](./specs/INDEX.md)
+
+## ✍ Governance TL;DR
+
+- **Strict Boundaries:** Never mix facts (knowledge) with recipes (patterns) or rules (specs).
+- **Semantic Naming:** Files use descriptive names, no numeric prefixes (`01-`, `02-`).
+- **Token Efficiency:** Keep files small. AI agents read `IO.md` first to understand a component, not the whole spec.
+
+Read [CONTRIBUTING.md](./CONTRIBUTING.md) before adding or modifying files in `.lab/`.

@@ -30,6 +30,3 @@ function UserProfile({ id }) {
 ## Gotchas
 - `useSuspenseQuery` returns `data` directly, eliminating `isLoading` from destructuring.
 - If the query fails, it will throw an error to be caught by an **ErrorBoundary**.
-
-## In our Stack
-Standard for our **Lego Components** in Next.js, allowing declarative and fluid loading experiences.

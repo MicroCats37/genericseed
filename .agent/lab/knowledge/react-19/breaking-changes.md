@@ -32,6 +32,3 @@ Depreciated or removed features and behavior changes to immediately address when
 ## Gotchas
 - `useActionState` was called `useFormState` in early canary versions. Ensure you use the final stable name.
 - `useFormStatus` is from `react-dom`, not `react`.
-
-## In our Stack
-Ensures our **Lab** is 100% compatible with the future of React, avoiding 2020 patterns in 2026.

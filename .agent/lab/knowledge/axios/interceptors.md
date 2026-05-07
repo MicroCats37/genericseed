@@ -34,5 +34,4 @@ api.interceptors.response.use(
 - Response interceptors can get stuck in infinite loops if a "retry" also yields a 401. Always implement a "once-only" or "max-retries" logic.
 - Remember to return the `config` or `response` object, otherwise the request flow breaks.
 
-## In our Stack
-Combined with **Zustand** for state management and **server-only** logic in Next.js to ensure secure credentials handling.
+

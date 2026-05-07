@@ -32,6 +32,3 @@ export default function Page() { /* ... */ }
 ## Gotchas
 - `generateMetadata` can only be used in Server Components.
 - Next.js waits for metadata resolution before rendering, ensuring crawlers see correct info.
-
-## In our Stack
-Ensures every **Page Lego** we build is indexable and shareable on social networks.

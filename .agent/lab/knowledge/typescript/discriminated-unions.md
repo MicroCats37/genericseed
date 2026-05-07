@@ -33,6 +33,3 @@ function renderUI(state: UIState) {
 
 ## Gotchas
 - Discriminated unions only work if the differentiation property is primitive (string, number, boolean) and literal.
-
-## In our Stack
-Standard for managing **Server Response States** and **Complex Form Steps**.

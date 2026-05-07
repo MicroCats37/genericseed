@@ -164,4 +164,17 @@ catch {
 
 ---
 
+## 11. Command Chaining
+
+### Chaining Operators
+
+| Context | ❌ Don't Use | ✅ Use |
+|---------|-------------|--------|
+| Sequential Chaining | `&&` | `;` |
+| Conditional success | `&&` | `if ($?) { ... }` or pipelines |
+
+**Rule:** Always use `;` for sequential commands. ONLY use `&&` if you have verified PowerShell version >= 7.0 via `$PSVersionTable.PSVersion.Major`.
+
+---
+
 > **Remember:** PowerShell has unique syntax rules. Parentheses, ASCII-only, and null checks are non-negotiable.

@@ -27,6 +27,3 @@ type UserResult = ReturnType<typeof getUser>;
 
 ## Gotchas
 - `Required<T>` can break things if underlying properties are optional for a reason; use it sparingly.
-
-## In our Stack
-Used to keep the **Component Props** lean and linked to our **Database Entities**.

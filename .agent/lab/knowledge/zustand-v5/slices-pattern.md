@@ -47,6 +47,3 @@ export const useBoundStore = create<UserSlice & UISlice>()((...a) => ({
 ## Gotchas
 - The order of functions in `create` matters if slices depend on each other.
 - Middleware like `persist` should wrap the principal function merging all slices.
-
-## In our Stack
-How we manage complex **Local State** that doesn't belong to the **TanStack Query** cache (e.g., user preferences, wizard steps).

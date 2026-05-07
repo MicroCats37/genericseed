@@ -31,5 +31,4 @@ type UserInput = z.input<typeof UserSchema>;
 ## Gotchas
 - `z.infer` always returns the **output** type (after transforms). If your schema converts a string to a `Date`, `z.infer` will be `Date`, while `z.input` will be `string`.
 
-## In our Stack
-Allows the frontend to know exactly what kind of data is returned by a **Server Action** or an **Axios** request based solely on the validation schema.
+

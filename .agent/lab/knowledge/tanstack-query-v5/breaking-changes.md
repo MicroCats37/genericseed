@@ -26,6 +26,3 @@ useQuery({
 ## Gotchas
 - If you used `onSuccess` to sync with a Zustand store, use a **Global Query Cache** or manage the transition in the consumer component.
 - The new `isPending` can be tricky: it activates the first time data is loaded (no cache).
-
-## In our Stack
-Ensures our AI uses modern syntax, avoiding broken v4 code generations.

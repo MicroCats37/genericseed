@@ -1,0 +1,43 @@
+// genericForm/inputs/InputText.tsx
+"use client";
+
+import type React from "react";
+import { Input } from "@/components/ui/input";
+import type { InputComponentProps } from "./types";
+
+/**
+ * Input de texto básico.
+ * Soporta icono opcional a la izquierda.
+ */
+export const InputText: React.FC<InputComponentProps> = ({
+  field,
+  register,
+  error,
+  id,
+}) => {
+  const hasIcon = !!field.icon;
+  const Icon = field.icon;
+
+  const inputElement = (
+    <Input
+      id={id}
+      type={field.type}
+      placeholder={field.placeholder}
+      disabled={field.disabled}
+      aria-invalid={!!error}
+      className={`${hasIcon ? "pl-10" : ""} ${field.className || ""}`}
+      {...register(field.name)}
+    />
+  );
+
+  if (!hasIcon) return inputElement;
+
+  return (
+    <div className="relative">
+      <div className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">
+        {Icon && <Icon className="h-4 w-4" />}
+      </div>
+      {inputElement}
+    </div>
+  );
+};

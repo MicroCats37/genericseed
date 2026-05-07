@@ -63,6 +63,14 @@ class BaseSchema(Schema):
         return _sanitize_empty_strings(data)
 
 
+class DataForm(Schema):
+    """
+    Wrapper para recibir el campo 'data' JSON que envía buildApiPayload.
+    Usar como: data: Form[DataForm] en el endpoint.
+    """
+    data: str
+
+
 def AsForm(schema_cls: Type[T]) -> Type[Schema]:
     """
     Genera dinámicamente una versión "Form-safe" del schema dado.
@@ -182,6 +190,47 @@ def hydrate_form(form_data: Schema, files: list[UploadedFile], target_schema: Ty
 
 
 # ─── Helpers internos ────────────────────────────────────────────────────────
+
+def parse_form_json(data_field: str | None, files: Any, target_schema: Type[T]) -> T:
+    """
+    Parsea el campo 'data' de un FormData (formato buildApiPayload),
+    hidrata archivos usando hydrate_form y valida contra el schema.
+
+    Formato esperado del FormData:
+        data: '{"dni":"...","foto_frontal":"file_uuid"}'
+        files: [UploadedFile con nombre "file_uuid___original.jpg"]
+
+    Uso: payload = parse_form_json(request.POST.get("data"), request.FILES, ConocidoIn)
+    """
+    import json
+    from ninja.errors import HttpError
+
+    if not data_field:
+        raise HttpError(400, "El campo 'data' es requerido en el formulario.")
+
+    try:
+        raw = json.loads(data_field)
+    except (ValueError, TypeError):
+        raise HttpError(400, "El campo 'data' no contiene un JSON válido.")
+
+    form_schema_cls = AsForm(target_schema)
+    form_data = form_schema_cls.model_validate(raw)
+
+    # Convertir a lista plana de UploadedFile (soporta múltiples formatos de entrada)
+    file_list: list = []
+    if isinstance(files, list):
+        file_list = files
+    elif hasattr(files, "getlist"):
+        for key in files.keys():
+            file_list.extend(files.getlist(key))
+    elif isinstance(files, dict):
+        for v in files.values():
+            if isinstance(v, list):
+                file_list.extend(v)
+            else:
+                file_list.append(v)
+
+    return hydrate_form(form_data, file_list, target_schema)
 
 def _sanitize_empty_strings(node: Any) -> Any:
     """

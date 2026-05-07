@@ -1,289 +1,60 @@
-# Antigravity Kit Architecture
+# Antigravity Lab Architecture
 
-> Comprehensive AI Agent Capability Expansion Toolkit
-
----
-
-## 📋 Overview
-
-Antigravity Kit is a modular system consisting of:
-
-- **20 Specialist Agents** - Role-based AI personas
-- **36 Skills** - Domain-specific knowledge modules
-- **11 Workflows** - Slash command procedures
+> Spec-Driven & Domain-Centric System for generic
 
 ---
 
-## 🏗️ Directory Structure
+## 🏗️ System Components
 
-```plaintext
-.agent/
-├── ARCHITECTURE.md          # This file
-├── agents/                  # 20 Specialist Agents
-├── skills/                  # 36 Skills
-├── workflows/               # 11 Slash Commands
-├── rules/                   # Global Rules
-└── scripts/                 # Master Validation Scripts
-```
+The architecture is built on three pillars: **The Lab** (Source of Truth), **SDD Pipeline** (Process), and **Engram** (State).
 
----
+### 1. The Lab (`.agent/lab/`)
+A 4-layered documentation system that dictates how the code should be built.
 
-## 🤖 Agents (20)
+- **Layer 1: Knowledge** (`knowledge/`) — Pure technical facts.
+- **Layer 2: Patterns** (`patterns/`) — Implementation recipes.
+- **Layer 3: Specs** (`specs/`) — Architectural contracts (Generic).
+- **Layer 4: Projects** (`projects/`) — Domain Context Concentrator (Specific).
 
-Specialist AI personas for different domains.
+### 2. SDD Pipeline (Spec-Driven Development)
+A strict sequential workflow for all implementations:
+1. `explore` → Investigation & API discovery.
+2. `propose` → Intent & scope definition.
+3. `spec` → Delta rules (REQUIRED/FORBIDDEN).
+4. `design` → Component tree & state architecture.
+5. `tasks` → Atomic checklist.
+6. `apply` → Code implementation.
+7. `verify` → Quality/Spec audit.
+8. `archive` → Final state sync.
 
-| Agent | Focus | Skills Used |
-| ----- | ----- | ----------- |
-| `orchestrator` | Multi-agent coordination | parallel-agents, behavioral-modes |
-| `project-planner` | Discovery, task planning | brainstorming, plan-writing, architecture |
-| `frontend-specialist` | Web UI/UX | frontend-design, nextjs-react-expert, tailwind-patterns |
-| `backend-specialist` | API, business logic | api-patterns, nodejs-best-practices, database-design |
-| `database-architect` | Schema, SQL | database-design, prisma-expert |
-| `mobile-developer` | iOS, Android, RN | mobile-design |
-| `game-developer` | Game logic, mechanics | game-development |
-| `devops-engineer` | CI/CD, Docker | deployment-procedures, docker-expert |
-| `security-auditor` | Security compliance | vulnerability-scanner, red-team-tactics |
-| `penetration-tester` | Offensive security | red-team-tactics |
-| `test-engineer` | Testing strategies | testing-patterns, tdd-workflow, webapp-testing |
-| `debugger` | Root cause analysis | systematic-debugging |
-| `performance-optimizer` | Speed, Web Vitals | performance-profiling |
-| `seo-specialist` | Ranking, visibility | seo-fundamentals, geo-fundamentals |
-| `documentation-writer` | Manuals, docs | documentation-templates |
-| `product-manager` | Requirements, user stories | plan-writing, brainstorming |
-| `product-owner` | Strategy, backlog, MVP | plan-writing, brainstorming |
-| `qa-automation-engineer` | E2E testing, CI pipelines | webapp-testing, testing-patterns |
-| `code-archaeologist` | Legacy code, refactoring | clean-code, code-review-checklist |
-| `explorer-agent` | Codebase analysis | - |
+### 3. Engram Persistence
+Cross-session state management using topic-based memory.
+- All SDD artifacts are stored with the key `sdd/{feature}/{phase}`.
+- Allows seamless switching between reasoning models (Pro/Opus) and execution models (Flash).
 
 ---
 
-## 🧩 Skills (36)
+## 🚦 Navigation Protocol
 
-Modular knowledge domains that agents can load on-demand. based on task context.
-
-### Frontend & UI
-
-| Skill | Description |
-| ----- | ----------- |
-| `nextjs-react-expert` | React & Next.js performance optimization (Vercel - 57 rules) |
-| `web-design-guidelines` | Web UI audit - 100+ rules for accessibility, UX, performance (Vercel) |
-| `tailwind-patterns` | Tailwind CSS v4 utilities |
-| `frontend-design` | UI/UX patterns, design systems |
-| `ui-ux-pro-max` | 50 styles, 21 palettes, 50 fonts |
-
-### Backend & API
-
-| Skill | Description |
-| ----- | ----------- |
-| `api-patterns` | REST, GraphQL, tRPC |
-| `nestjs-expert` | NestJS modules, DI, decorators |
-| `nodejs-best-practices` | Node.js async, modules |
-| `python-patterns` | Python standards, FastAPI |
-
-### Database
-
-| Skill | Description |
-| ----- | ----------- |
-| `database-design` | Schema design, optimization |
-| `prisma-expert` | Prisma ORM, migrations |
-
-### TypeScript/JavaScript
-
-| Skill | Description |
-| ----- | ----------- |
-| `typescript-expert` | Type-level programming, performance |
-
-### Cloud & Infrastructure
-
-| Skill | Description |
-| ----- | ----------- |
-| `docker-expert` | Containerization, Compose |
-| `deployment-procedures` | CI/CD, deploy workflows |
-| `server-management` | Infrastructure management |
-
-### Testing & Quality
-
-| Skill | Description |
-| ----- | ----------- |
-| `testing-patterns` | Jest, Vitest, strategies |
-| `webapp-testing` | E2E, Playwright |
-| `tdd-workflow` | Test-driven development |
-| `code-review-checklist` | Code review standards |
-| `lint-and-validate` | Linting, validation |
-
-### Security
-
-| Skill | Description |
-| ----- | ----------- |
-| `vulnerability-scanner` | Security auditing, OWASP |
-| `red-team-tactics` | Offensive security |
-
-### Architecture & Planning
-
-| Skill | Description |
-| ----- | ----------- |
-| `app-builder` | Full-stack app scaffolding |
-| `architecture` | System design patterns |
-| `plan-writing` | Task planning, breakdown |
-| `brainstorming` | Socratic questioning |
-
-### Mobile
-
-| Skill | Description |
-| ----- | ----------- |
-| `mobile-design` | Mobile UI/UX patterns |
-
-### Game Development
-
-| Skill | Description |
-| ----- | ----------- |
-| `game-development` | Game logic, mechanics |
-
-### SEO & Growth
-
-| Skill | Description |
-| ----- | ----------- |
-| `seo-fundamentals` | SEO, E-E-A-T, Core Web Vitals |
-| `geo-fundamentals` | GenAI optimization |
-
-### Shell/CLI
-
-| Skill | Description |
-| ----- | ----------- |
-| `bash-linux` | Linux commands, scripting |
-| `powershell-windows` | Windows PowerShell |
-
-### Other
-
-| Skill | Description |
-| ----- | ----------- |
-| `clean-code` | Coding standards (Global) |
-| `behavioral-modes` | Agent personas |
-| `parallel-agents` | Multi-agent patterns |
-| `mcp-builder` | Model Context Protocol |
-| `documentation-templates` | Doc formats |
-| `i18n-localization` | Internationalization |
-| `performance-profiling` | Web Vitals, optimization |
-| `systematic-debugging` | Troubleshooting |
+Before any architectural decision or code generation, the AI follows this path:
+1. **Business Context**: `projects/{current}/DOMAIN.md` + `API-INVENTORY.md`.
+2. **Technical Contract**: `specs/{framework}/INDEX.md`.
+3. **Implementation Recipe**: `patterns/{tech}/INDEX.md`.
 
 ---
 
-## 🔄 Workflows (11)
+## 🛠️ Global Tools & Scripts
 
-Slash command procedures. Invoke with `/command`.
-
-| Command | Description |
-| ------- | ----------- |
-| `/brainstorm` | Socratic discovery |
-| `/create` | Create new features |
-| `/debug` | Debug issues |
-| `/deploy` | Deploy application |
-| `/enhance` | Improve existing code |
-| `/orchestrate` | Multi-agent coordination |
-| `/plan` | Task breakdown |
-| `/preview` | Preview changes |
-| `/status` | Check project status |
-| `/test` | Run tests |
-| `/ui-ux-pro-max` | Design with 50 styles |
+| Tool | Purpose |
+|------|---------|
+| `Engram` | Persistent state & memory. |
+| `Context7` | Up-to-date documentation for external libs. |
+| `Pencil` | UI/UX design generation and file edits (.pen). |
 
 ---
 
-## 🎯 Skill Loading Protocol
+## 🏁 Summary Stats
 
-```plaintext
-User Request → Skill Description Match → Load SKILL.md
-                                            ↓
-                                    Read references/
-                                            ↓
-                                    Read scripts/
-```
-
-### Skill Structure
-
-```plaintext
-skill-name/
-├── SKILL.md           # (Required) Metadata & instructions
-├── scripts/           # (Optional) Python/Bash scripts
-├── references/        # (Optional) Templates, docs
-└── assets/            # (Optional) Images, logos
-```
-
-### Enhanced Skills (with scripts/references)
-
-| Skill | Files | Coverage |
-| ----- | ----- | -------- |
-| `typescript-expert` | 5 | Utility types, tsconfig, cheatsheet |
-| `ui-ux-pro-max` | 27 | 50 styles, 21 palettes, 50 fonts |
-| `app-builder` | 20 | Full-stack scaffolding |
-
----
-
-## � Scripts (2)
-
-Master validation scripts that orchestrate skill-level scripts.
-
-### Master Scripts
-
-| Script | Purpose | When to Use |
-| ------ | ------- | ----------- |
-| `checklist.py` | Priority-based validation (Core checks) | Development, pre-commit |
-| `verify_all.py` | Comprehensive verification (All checks) | Pre-deployment, releases |
-
-### Usage
-
-```bash
-# Quick validation during development
-python .agent/scripts/checklist.py .
-
-# Full verification before deployment
-python .agent/scripts/verify_all.py . --url http://localhost:3000
-```
-
-### What They Check
-
-**checklist.py** (Core checks):
-
-- Security (vulnerabilities, secrets)
-- Code Quality (lint, types)
-- Schema Validation
-- Test Suite
-- UX Audit
-- SEO Check
-
-**verify_all.py** (Full suite):
-
-- Everything in checklist.py PLUS:
-- Lighthouse (Core Web Vitals)
-- Playwright E2E
-- Bundle Analysis
-- Mobile Audit
-- i18n Check
-
-For details, see [scripts/README.md](scripts/README.md)
-
----
-
-## 📊 Statistics
-
-| Metric | Value |
-| ------ | ----- |
-| **Total Agents** | 20 |
-| **Total Skills** | 36 |
-| **Total Workflows** | 11 |
-| **Total Scripts** | 2 (master) + 18 (skill-level) |
-| **Coverage** | ~90% web/mobile development |
-
----
-
-## 🔗 Quick Reference
-
-| Need | Agent | Skills |
-| ---- | ----- | ------ |
-| Web App | `frontend-specialist` | nextjs-react-expert, frontend-design |
-| API | `backend-specialist` | api-patterns, nodejs-best-practices |
-| Mobile | `mobile-developer` | mobile-design |
-| Database | `database-architect` | database-design, prisma-expert |
-| Security | `security-auditor` | vulnerability-scanner |
-| Testing | `test-engineer` | testing-patterns, webapp-testing |
-| Debug | `debugger` | systematic-debugging |
-| Plan | `project-planner` | brainstorming, plan-writing |
+- **Architecture Mode**: Lab-Centric / SDD.
+- **Execution Model**: Sequential Pipeline (One phase per turn).
+- **Core Strategy**: Separation of Business Logic (`projects/`) and Technical Contracts (`specs/`).

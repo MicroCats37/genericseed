@@ -35,6 +35,3 @@ export const useStore = <T, F>(
 ## Gotchas
 - During first render on the server, `data` is `undefined`. Handle this case in your UI (e.g., show a skeleton).
 - Don't use this hook for non-persisted states, as it adds an unnecessary render cycle.
-
-## In our Stack
-Allows the **E-commerce** application to save the shopping cart in LocalStorage without breaking **Next.js** rendering.

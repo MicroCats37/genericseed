@@ -32,6 +32,3 @@ function Navbar() {
 ## Gotchas
 - Without `useShallow`, extracting a literal object `() => ({ a, b })` will cause re-renders on **EVERY** store change because the object is always a new reference.
 - Zustand v5 improved inference, but selectors remain best practice for self-documenting code.
-
-## In our Stack
-Optimizes our **Lego UI Components**, making them feel instantaneous even with large stores.

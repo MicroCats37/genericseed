@@ -38,6 +38,3 @@ async function fetchData<T>(url: string): Promise<T> {
 ## Gotchas
 - TypeScript sometimes cannot infer the generic in React components if initial props aren't passed; in those cases, declare it explicitly: `<GenericList<User> ... />`.
 - In `.tsx` files, a simple generic `<T>` can be confused with an HTML tag. Solution: use `<T,>` or `<T extends unknown>`.
-
-## In our Stack
-Forms the foundation of our core packages. Allows **Axios** to return typed data and **TanStack Query** to know the data shape from the hook definition.

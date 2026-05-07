@@ -40,6 +40,3 @@ async function getPosts() {
 ## Gotchas
 - The `fetch` cache is persistent. Use `revalidateTag` in Server Actions to clear it.
 - Using cookies or headers will cause the page to be dynamic automatically.
-
-## In our Stack
-Combined with **TanStack Query (Prefetching)** so the client has data ready without extra spinners.

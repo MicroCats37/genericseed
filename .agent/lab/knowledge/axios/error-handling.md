@@ -31,6 +31,3 @@ controller.abort(); // Cancel the request
 ## Gotchas
 - An "aborted" request throws an error. You must check `axios.isCancel(error)` to ignore it and avoid showing generic error messages to the user.
 - Timeouts also trigger an error; ensure your UI distinguishes between a dead server and a manual cancellation.
-
-## In our Stack
-Integrated with **Zod** to validate error schemas and **Toast** libraries for consistent UI feedback.

@@ -31,6 +31,3 @@ function Parent() {
 ## Gotchas
 - Ensure you extract `ref` from the props object if using destructuring.
 - For TypeScript, include `ref?: React.Ref<HTMLInputElement>` in your Props interface.
-
-## In our Stack
-Enormously simplifies our **Lego UI Components** needing to integrate with animation libraries (e.g. Framer Motion) or form managers.

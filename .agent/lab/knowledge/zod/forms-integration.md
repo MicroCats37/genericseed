@@ -22,5 +22,4 @@ const form = useForm<UserInput>({
 ## Gotchas
 - RHF uses input types from Zod, ensure you are inferring `UserInput` where appropriate.
 
-## In our Stack
-Standard for all **Platform Foundation** forms, ensuring type safety from input to database.
+

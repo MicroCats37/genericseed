@@ -30,6 +30,3 @@ async function getUser(id: string): Promise<User> {
 ## Gotchas
 - Axios generics only type the `data` property of the response object.
 - The generic type is a "promise" to TS, but not a runtime guarantee—that's why Zod is mandatory for critical data.
-
-## In our Stack
-Forms the "Safe Contract" between our **React 19 Components** and the remote Backend.

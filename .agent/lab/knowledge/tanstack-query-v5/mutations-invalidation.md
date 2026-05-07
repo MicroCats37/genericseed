@@ -32,6 +32,3 @@ export function useCreateUser() {
 ## Gotchas
 - Unlike `useQuery`, mutations **DO** retain `onSuccess`, `onError`, and `onSettled` callbacks in v5.
 - If you invalidate a query not currently in use, it will simply be marked "stale" and refetched next time it's used.
-
-## In our Stack
-Combines with **Zod** to validate data sent in the `mutationFn` and with **Zustand** if the result of the mutation must update global state outside the query cache.

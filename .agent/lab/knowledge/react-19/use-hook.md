@@ -40,6 +40,3 @@ export default function App() {
 ## Gotchas
 - When `use()` receives a promise, the component will "Suspend" until it resolves. You'll need a `Suspense` fallback higher up in the tree.
 - It's the only hook-like API that can be called inside an `if` or a `for`.
-
-## In our Stack
-Fundamental for the **Data Streaming Pattern** in Next.js, allowing async parts of the page to load without blocking initial rendering.

@@ -34,5 +34,4 @@ function UserProfile({ id }: { id: string }) {
 - The old `cacheTime` is now called **`gcTime`** (Garbage Collection Time).
 - `onSuccess`, `onError`, and `onSettled` callbacks are no longer available in `useQuery`. Handle these effects in `useEffect` or via `queryClient.setQueryData`.
 
-## In our Stack
-The bridge between **Axios** (our fetcher) and **Global State**. It syncs with **React 19 Suspense** for clean data loading.
+

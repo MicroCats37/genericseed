@@ -36,6 +36,3 @@ function Cart({ initialCount, updateAction }) {
 ## Gotchas
 - The optimistic state is "discarded" as soon as the component re-renders with real server data.
 - You must handle the logic of merging old and new states in the reducer function (second argument).
-
-## In our Stack
-Integrates with **Zustand Stores** to synchronize speed perception across the entire application.

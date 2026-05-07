@@ -27,6 +27,3 @@ NEXT_PUBLIC_ANALYTICS_ID="UA-123" # Public
 ## Gotchas
 - Next.js 16 supports `taint` (experimental) to mark objects that must never be sent to the client.
 - The `server-only` build error is your best friend for avoiding security debt.
-
-## In our Stack
-Essential for our **Monorepo** to maintain logical separation between "private" and "interface".

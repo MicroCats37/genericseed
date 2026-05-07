@@ -40,5 +40,4 @@ export function ClientToggle() {
 ## Gotchas
 - You cannot import a Server Component directly into a Client Component. Pass it as `children` or as a `prop` (React nodes are serializable).
 
-## In our Stack
-The foundation of our **Monorepo**. Allows a powerful backend within the frontend without exposing secrets.
+

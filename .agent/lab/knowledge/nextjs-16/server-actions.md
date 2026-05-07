@@ -46,6 +46,3 @@ export function MyForm() {
 ## Gotchas
 - Server Actions only return serializable data.
 - Always use `redirect` outside of `try/catch` as it uses an internal exception flow.
-
-## In our Stack
-Integrates with **Zod** for validation and **React 19** for automatic loading state management.

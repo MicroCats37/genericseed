@@ -23,6 +23,3 @@ const CompleteUserSchema = UserSchema.merge(ProfileSchema);
 
 ## Gotchas
 - `.merge()` overwrites fields if they have the same name.
-
-## In our Stack
-Allows us to define **Core Schemas** (Legos) once and reuse them across different backend/frontend boundaries.

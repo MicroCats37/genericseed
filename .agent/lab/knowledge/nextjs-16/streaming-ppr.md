@@ -30,6 +30,3 @@ export default function Page() {
 ## Gotchas
 - `loading.tsx` applies to the entire underlying route hierarchy.
 - PPR requires activation in `next.config.js` in some versions.
-
-## In our Stack
-Ensures a 100 SEO Score and a user experience that feels instantaneous.

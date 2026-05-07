@@ -28,6 +28,3 @@ export default api;
 ## Gotchas
 - Headers defined in `axios.create` are static. If you need dynamic headers (like a changing Token), use **Interceptors**.
 - In Next.js (Server Side), `process.env` keys without `NEXT_PUBLIC_` are only accessible on the server.
-
-## In our Stack
-Used as the foundation for all data services. Integrates with **TanStack Query** as the primary fetching engine.

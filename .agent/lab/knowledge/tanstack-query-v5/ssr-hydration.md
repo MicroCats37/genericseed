@@ -35,6 +35,3 @@ export default async function PostsPage() {
 ## Gotchas
 - The `QueryClient` on the server must be created **inside** the component function or via a helper to avoid data leakage between users.
 - Ensure `queryKey` matches exactly between server and client.
-
-## In our Stack
-Allows Next.js to perform **Hydrated Streaming**, drastically improving SEO and Largest Contentful Paint (LCP) metrics.
